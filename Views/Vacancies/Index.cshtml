@@ -1,0 +1,136 @@
+﻿@model IEnumerable<WebApplication3.Models.Vacancy>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Список кандидатов</h1>
+
+<p>
+    <a asp-action="Create">Вставить</a>
+</p>
+
+<form asp-action="Index" method="post">
+    <div class="form-actions no-color">
+        <p>
+            Поиск: <input type="text" name="fio"/>
+            <input type="submit" value="Поиск" class="btn btn-default" /> |
+            <a asp-action="Index">Вернуться к полному списку</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.staffing_item_parrent_full_ext_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.staffing_item_full_ext_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fio_vlad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon_vlad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fio_rec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon_rec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email_rec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_candidate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.last_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.first_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.middle_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.no_middle_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dt_birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rec_Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffing_item_parrent_full_ext_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.staffing_item_full_ext_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fio_vlad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon_vlad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fio_rec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon_rec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email_rec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_candidate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.first_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.middle_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.no_middle_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dt_birthday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rec_Active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Обновить</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

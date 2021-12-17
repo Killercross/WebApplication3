@@ -1,0 +1,109 @@
+﻿@model WebApplication3.Models.Vacancy
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Vacancy</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="staffing_item_parrent_full_ext_id" class="control-label"></label>
+                <input asp-for="staffing_item_parrent_full_ext_id" class="form-control" />
+                <span asp-validation-for="staffing_item_parrent_full_ext_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="staffing_item_full_ext_id" class="control-label"></label>
+                <input asp-for="staffing_item_full_ext_id" class="form-control" />
+                <span asp-validation-for="staffing_item_full_ext_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fio_vlad" class="control-label"></label>
+                <input asp-for="Fio_vlad" class="form-control" />
+                <span asp-validation-for="Fio_vlad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon_vlad" class="control-label"></label>
+                <input asp-for="Telefon_vlad" class="form-control" />
+                <span asp-validation-for="Telefon_vlad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fio_rec" class="control-label"></label>
+                <input asp-for="Fio_rec" class="form-control" />
+                <span asp-validation-for="Fio_rec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefon_rec" class="control-label"></label>
+                <input asp-for="Telefon_rec" class="form-control" />
+                <span asp-validation-for="Telefon_rec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email_rec" class="control-label"></label>
+                <input asp-for="Email_rec" class="form-control" />
+                <span asp-validation-for="Email_rec" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id_candidate" class="control-label"></label>
+                <input asp-for="id_candidate" class="form-control" />
+                <span asp-validation-for="id_candidate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="last_name" class="control-label"></label>
+                <input asp-for="last_name" class="form-control" />
+                <span asp-validation-for="last_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="first_name" class="control-label"></label>
+                <input asp-for="first_name" class="form-control" />
+                <span asp-validation-for="first_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="middle_name" class="control-label"></label>
+                <input asp-for="middle_name" class="form-control" />
+                <span asp-validation-for="middle_name" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="no_middle_name" /> @Html.DisplayNameFor(model => model.no_middle_name)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="dt_birthday" class="control-label"></label>
+                <input asp-for="dt_birthday" class="form-control" />
+                <span asp-validation-for="dt_birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="gender" /> @Html.DisplayNameFor(model => model.gender)
+                </label>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Rec_Active" class="control-label"></label>
+                <input asp-for="Rec_Active" class="form-control" />
+                <span asp-validation-for="Rec_Active" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
